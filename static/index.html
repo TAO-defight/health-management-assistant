@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 健身与营养规划助手</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script defer src="/static/lucide.min.js"></script>
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI 私教 + 营养师</p>
+          <h1 id="app-title">你好，我是你的 AI 健身与营养规划助手。</h1>
+        <p class="hero-text">我会先读取或收集你的身体数据，再分步了解饮食偏好、伤病、时间安排和厨房条件，最后生成一份可下载的一周执行计划。</p>
+        </div>
+        <div class="hero-panel" aria-label="今日开始">
+          <div class="status-card">
+            <span class="status-dot"></span>
+            <strong>安全优先</strong>
+            <span>生成运动建议前会先核对损伤或疼痛部位。</span>
+          </div>
+          <div class="choice-row" role="group" aria-label="数据输入方式">
+            <button class="choice active" data-mode="manual" type="button"><i data-lucide="keyboard"></i>直接输入数据</button>
+            <button class="choice" data-mode="photo" type="button"><i data-lucide="scan-line"></i>上传体脂秤照片</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="progress" aria-label="流程进度">
+          <ol id="progressList"></ol>
+          <div class="disclaimer">本建议由 AI 生成，仅供参考，不构成医疗建议。剧烈运动前请咨询专业人士。</div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <div class="panel-head">
+            <div>
+              <p class="step-kicker" id="stepKicker">Phase 1</p>
+              <h2 id="stepTitle">身体数据</h2>
+            </div>
+            <button id="reviewToggle" class="ghost hidden" type="button">两周后复盘</button>
+          </div>
+
+          <div id="alert" class="alert hidden" role="alert"></div>
+          <form id="wizardForm" novalidate></form>
+
+          <div id="planView" class="plan hidden"></div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
